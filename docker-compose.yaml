@@ -1,0 +1,24 @@
+version: "3"
+# Define our services 
+services: 
+  # This is our nodejs app built using the Dockerfile
+  ulearn-interop-ms:
+    # The name of our node app container
+    container_name: ulearn-interop-ms
+    # Restarts our node app whenever it fails
+    restart: always
+    # Builds the node app docker container from the local -
+    # Docker file we created
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Exposes the necessary ports that our node app uses
+    ports:
+      - "7000:8080"
+    # All the services our node app will link to -
+    # which in our case is only mongo
+    # You can other services such as a Redis
+    # Set the environment of the deploy
+    environment:
+      RS_ENDPOINT: http://172.17.0.1:6667/
+      WS_ENDPOINT: http://192.168.1.108:8088/mockBasicHttpBinding_IService1

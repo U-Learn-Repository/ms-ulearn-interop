@@ -1,0 +1,4 @@
+<!DOCTYPE jboss-web>
+<jboss-web>
+    <context-root>ulearn</context-root>
+</jboss-web>
