@@ -51,7 +51,6 @@ public class ObjectFactory {
     private final static QName _QName_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "QName");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
     private final static QName _String_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "string");
-    private final static QName _ExistUserResponseExistUserResult_QNAME = new QName("http://tempuri.org/", "ExistUserResult");
     private final static QName _ViewModelUserLastName_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "LastName");
     private final static QName _ViewModelUserCountry_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "Country");
     private final static QName _ViewModelUserName_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "Name");
@@ -61,6 +60,7 @@ public class ObjectFactory {
     private final static QName _ViewModelUserUserName_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "UserName");
     private final static QName _ViewModelUserConfirmedPassword_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "ConfirmedPassword");
     private final static QName _ViewModelUserPicture_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "Picture");
+    private final static QName _ExistUserResponseExistUserResult_QNAME = new QName("http://tempuri.org/", "ExistUserResult");
     private final static QName _ViewModelResponseToken_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "Token");
     private final static QName _ViewModelResponseUri_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "Uri");
     private final static QName _ViewModelResponseUser_QNAME = new QName("http://schemas.datacontract.org/2004/07/sap_soap", "User");
@@ -314,15 +314,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ViewModelResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "ExistUserResult", scope = ExistUserResponse.class)
-    public JAXBElement<ViewModelResponse> createExistUserResponseExistUserResult(ViewModelResponse value) {
-        return new JAXBElement<ViewModelResponse>(_ExistUserResponseExistUserResult_QNAME, ViewModelResponse.class, ExistUserResponse.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -401,6 +392,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/sap_soap", name = "Picture", scope = ViewModelUser.class)
     public JAXBElement<String> createViewModelUserPicture(String value) {
         return new JAXBElement<String>(_ViewModelUserPicture_QNAME, String.class, ViewModelUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ViewModelResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "ExistUserResult", scope = ExistUserResponse.class)
+    public JAXBElement<ViewModelResponse> createExistUserResponseExistUserResult(ViewModelResponse value) {
+        return new JAXBElement<ViewModelResponse>(_ExistUserResponseExistUserResult_QNAME, ViewModelResponse.class, ExistUserResponse.class, value);
     }
 
     /**

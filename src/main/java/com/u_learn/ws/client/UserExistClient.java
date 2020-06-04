@@ -18,9 +18,9 @@ public class UserExistClient {
         Service1 service = new Service1();
         IService1 proxy = service.getBasicHttpBindingIService1();
         cambiarEndpointWS((BindingProvider) proxy, wsdlURL);
-        try {            
+        try {
             response = proxy.existUser(email);
-        } catch (WebServiceException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return new UserModel();
         }
